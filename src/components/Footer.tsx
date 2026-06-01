@@ -3,7 +3,7 @@ import { useLanguage } from '../context/LanguageContext'
 import Logo from './Logo'
 
 export default function Footer() {
-  const { t, lang, setLang } = useLanguage()
+  const { t } = useLanguage()
 
   const navLinks = [
     { to: '/', label: t('nav.home') },
