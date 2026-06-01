@@ -1,0 +1,189 @@
+/* ── Brand fonts (match platform UI: Syne display + DM Sans body) ── */
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@500;600;700;800&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600;9..40,700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Syne', ui-sans-serif, sans-serif;
+
+  /* Voxia blue (primary brand, matches platform UI) */
+  --color-brand-50:  #eff6ff;
+  --color-brand-100: #dbeafe;
+  --color-brand-200: #bfdbfe;
+  --color-brand-300: #93c5fd;
+  --color-brand-400: #60a5fa;
+  --color-brand-500: #4f92e6;
+  --color-brand-600: #3786d0;
+  --color-brand-700: #2c6cab;
+  --color-brand-800: #1860a2;
+  --color-brand-900: #14375e;
+
+  /* Cyan accent (from platform) */
+  --color-accent-400: #47bfff;
+  --color-accent-500: #06b6d4;
+  --color-accent-600: #0c8fd6;
+
+  /* Ink (dark surfaces — refined deep navy-slate, tied to brand) */
+  --color-ink:     #0b1020;
+  --color-ink-800: #0f1730;
+  --color-ink-700: #182542;
+  --color-ink-600: #233153;
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+  body {
+    font-family: var(--font-sans);
+    color: #1e2230;
+    background: #ffffff;
+  }
+  h1, h2, h3, h4, h5 {
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
+  }
+}
+
+/* ── Gradient text (violet → blue → cyan) ── */
+.text-gradient {
+  background: linear-gradient(115deg, #3786d0 0%, #4f92e6 45%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+}
+
+/* ── Buttons ── */
+.btn-gradient {
+  background: linear-gradient(135deg, #4f92e6 0%, #3786d0 100%);
+  color: #fff;
+  box-shadow: 0 10px 28px -8px rgba(37, 99, 235, 0.45);
+  transition: box-shadow 0.18s ease, filter 0.18s ease;
+}
+.btn-gradient:hover {
+  box-shadow: 0 16px 40px -10px rgba(37, 99, 235, 0.55);
+  filter: brightness(1.1);
+}
+.btn-gradient:active { filter: brightness(0.96); }
+
+.btn-outline {
+  border: 1px solid rgba(55, 134, 208, 0.30);
+  color: #2c6cab;
+  background: rgba(79, 146, 230, 0.05);
+  transition: border-color 0.18s, background 0.18s, color 0.18s;
+}
+.btn-outline:hover {
+  border-color: rgba(55, 134, 208, 0.6);
+  background: rgba(79, 146, 230, 0.10);
+}
+
+.btn-light {
+  background: #ffffff;
+  color: #2c6cab;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 8px 24px -8px rgba(0, 0, 0, 0.3);
+}
+.btn-light:hover { transform: translateY(-2px); box-shadow: 0 14px 34px -10px rgba(0, 0, 0, 0.4); }
+
+/* ── Glass card ── */
+.glass {
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(14px) saturate(1.4);
+  -webkit-backdrop-filter: blur(14px) saturate(1.4);
+  border: 1px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 12px 32px -12px rgba(16, 24, 40, 0.12);
+}
+
+/* card lift on hover */
+.card-hover {
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 20px 48px -16px rgba(37, 99, 235, 0.22);
+  border-color: rgba(79, 146, 230, 0.35);
+}
+
+/* ── Subtle blueprint grid ── */
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(59, 130, 246, 0.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(59, 130, 246, 0.05) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+.grid-bg-dark {
+  background-image:
+    linear-gradient(rgba(120, 130, 255, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(120, 130, 255, 0.06) 1px, transparent 1px);
+  background-size: 52px 52px;
+}
+
+/* ── Mesh gradient glows ── */
+.mesh-light {
+  background:
+    radial-gradient(ellipse 70% 55% at 15% 0%, rgba(59, 130, 246, 0.10) 0%, transparent 60%),
+    radial-gradient(ellipse 55% 45% at 90% 30%, rgba(6, 182, 212, 0.10) 0%, transparent 60%);
+}
+.mesh-dark {
+  background:
+    radial-gradient(ellipse 65% 55% at 18% -8%, rgba(59, 130, 246, 0.20) 0%, transparent 62%),
+    radial-gradient(ellipse 50% 42% at 88% 6%, rgba(6, 182, 212, 0.10) 0%, transparent 58%),
+    radial-gradient(ellipse 55% 65% at 62% 112%, rgba(37, 99, 235, 0.16) 0%, transparent 62%);
+}
+
+/* live status dot */
+.status-dot {
+  width: 8px; height: 8px; border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.5);
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+@keyframes pulse-dot {
+  0%, 100% { box-shadow: 0 0 0 0 rgba(52, 211, 153, 0.5); }
+  50%      { box-shadow: 0 0 0 6px rgba(52, 211, 153, 0); }
+}
+
+/* gentle entrance */
+@keyframes rise {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+.rise { animation: rise 0.6s cubic-bezier(0.22, 1, 0.36, 1) both; }
+
+/* ── Voice wave bars (equalizer animation) ── */
+.wave-bar {
+  width: 3px;
+  border-radius: 9999px;
+  background: linear-gradient(to top, var(--color-brand-500), var(--color-accent-500));
+  animation: waveBar 1.4s ease-in-out infinite;
+  transform-origin: bottom;
+}
+@keyframes waveBar {
+  0%, 100% { transform: scaleY(0.2); opacity: 0.5; }
+  50%       { transform: scaleY(1);   opacity: 1; }
+}
+.wave-bar:nth-child(1)  { animation-delay: 0s;     height: 20px; }
+.wave-bar:nth-child(2)  { animation-delay: 0.10s;  height: 32px; }
+.wave-bar:nth-child(3)  { animation-delay: 0.20s;  height: 44px; }
+.wave-bar:nth-child(4)  { animation-delay: 0.05s;  height: 56px; }
+.wave-bar:nth-child(5)  { animation-delay: 0.15s;  height: 64px; }
+.wave-bar:nth-child(6)  { animation-delay: 0.25s;  height: 72px; }
+.wave-bar:nth-child(7)  { animation-delay: 0.10s;  height: 64px; }
+.wave-bar:nth-child(8)  { animation-delay: 0.00s;  height: 56px; }
+.wave-bar:nth-child(9)  { animation-delay: 0.20s;  height: 44px; }
+.wave-bar:nth-child(10) { animation-delay: 0.15s;  height: 32px; }
+.wave-bar:nth-child(11) { animation-delay: 0.05s;  height: 20px; }
+.wave-bar:nth-child(12) { animation-delay: 0.10s;  height: 32px; }
+.wave-bar:nth-child(13) { animation-delay: 0.00s;  height: 44px; }
+.wave-bar:nth-child(14) { animation-delay: 0.25s;  height: 56px; }
+.wave-bar:nth-child(15) { animation-delay: 0.15s;  height: 40px; }
+.wave-bar:nth-child(16) { animation-delay: 0.05s;  height: 28px; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: #d6d3e4; border-radius: 8px; border: 3px solid #fff; }
+::-webkit-scrollbar-thumb:hover { background: #b9b3d0; }
