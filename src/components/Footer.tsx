@@ -19,7 +19,7 @@ export default function Footer() {
       <div className="absolute inset-0 grid-bg-dark opacity-40" aria-hidden="true" />
 
       <div className="relative max-w-6xl mx-auto px-4 sm:px-6 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-10">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-10 mb-5">
           <div className="max-w-xs">
             <Logo size={30} className="mb-4" />
             <p className="text-sm leading-relaxed text-slate-400">{t('footer.tagline')}</p>
@@ -71,13 +71,13 @@ export default function Footer() {
                 info@voxia.gr
               </a>
             </div>
-            <button
+            {/* <button
               onClick={() => setLang(lang === 'el' ? 'en' : 'el')}
               className="text-sm text-slate-300 border border-white/15 px-4 py-2 rounded-lg hover:border-brand-400 hover:text-white transition-colors"
               aria-label="Switch language"
             >
               {lang === 'el' ? 'English' : 'Ελληνικά'}
-            </button>
+            </button> */}
           </div>
         </div>
 

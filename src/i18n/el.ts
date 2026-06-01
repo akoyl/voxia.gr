@@ -167,7 +167,7 @@ export const el = {
     legalTitle: 'Νομικά',
     privacyPolicy: 'Πολιτική Απορρήτου',
     cookiePolicy: 'Πολιτική Cookies',
-    contactTitle: 'Επικοινωνία',
+    contactTitle: 'Email',
   },
   meta: {
     homeTitle: 'Voxia — AI Φωνητικός Βοηθός για Επιχειρήσεις',

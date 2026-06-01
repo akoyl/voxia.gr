@@ -167,7 +167,7 @@ export const en = {
     legalTitle: 'Legal',
     privacyPolicy: 'Privacy Policy',
     cookiePolicy: 'Cookie Policy',
-    contactTitle: 'Contact',
+    contactTitle: 'Email',
   },
   meta: {
     homeTitle: 'Voxia — AI Voice Assistant for Business',
